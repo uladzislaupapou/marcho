@@ -222,6 +222,18 @@
   }
 }
 
+.top {
+  &__container {
+    padding: 120px 0 130px;
+    max-width: 1700px;
+    margin: 0 auto;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .top-slider {
   background-color: $bg;
   padding: 65px 0 45px;
@@ -723,7 +735,8 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    &::after{
+
+    &::after {
       content: "";
       position: absolute;
       top: -31px;
@@ -831,5 +844,120 @@
   }
 }
 
+.breadcrumbs {
+  display: inline-flex;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/icons/home_icon.svg');
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    color: #727272;
+    padding-right: 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 15px;
+      width: 9px;
+      height: 10px;
+      background-image: url('../images/icons/angle_right.svg');
+    }
+
+    &:last-child {
+      color: $accent;
+      padding-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.modal {
+  max-width: 570px;
+  padding: 100px 0;
+  margin: 0 auto;
+
+  &__links {
+    margin-bottom: 40px;
+    text-align: center;
+
+  }
+
+  &__link {
+    color: #909090;
+    font-size: 22px;
+    text-transform: uppercase;
+    @extend %roboto-400;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+
+    &--active {
+      color: $accent;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: $bg;
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__input-checkbox {
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    margin-bottom: 12px;
+    background-color: $title;
+    @extend %roboto-400;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__forgot-pass {
+    color: $accent;
+  }
+}
 
 @import 'media';

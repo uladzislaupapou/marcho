@@ -50,7 +50,9 @@
 
 		<main class="main">
 			<section class="top">
-				<div class="top__container" style="background-image: url('images/top_bg.jpg')">
+				<div
+					class="top__container"
+					style="background-image: url('images/top_bg.jpg')">
 					<div class="container">
 						<h2 class="top__title title">Log in</h2>
 						<div class="breadcrumbs">
@@ -64,6 +66,39 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section class="modal">
+				<div class="container">
+					<div class="modal__links">
+						<a class="modal__link" href="#">Register</a>
+						<a class="modal__link modal__link--active" href="#">Login</a>
+					</div>
+					<form class="modal__form">
+						<label class="modal__label" for="username">
+							Username or email address*</label
+						>
+						<input
+							class="modal__input"
+							id="username"
+							name="username"
+							type="text"
+							required />
+						<label class="modal__label" for="password"> Password*</label>
+						<input
+							class="modal__input"
+							id="password"
+							name="password"
+							type="password"
+							required />
+						<label class="modal__label" for="remember">
+							<input class="modal__input-checkbox" id="remember" name="remember" type="checkbox" />
+							Remember me
+						</label>
+            <button class="modal__btn" type="submit">Log in</button>
+            <a class="modal__forgot-pass" href="#">Lost your password?</a>
+					</form>
 				</div>
 			</section>
 		</main>
