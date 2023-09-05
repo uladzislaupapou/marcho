@@ -937,6 +937,10 @@
     &:last-of-type {
       margin-bottom: 60px;
     }
+
+    &--register{ 
+      margin-bottom: 30px !important; 
+    }
   }
 
   &__input-checkbox {
@@ -957,6 +961,10 @@
 
   &__forgot-pass {
     color: $accent;
+  }
+
+  &__text {
+    margin-bottom: 25px;
   }
 }
 
