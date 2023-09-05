@@ -691,13 +691,8 @@
       line-height: 26px;
       @extend %roboto-700;
       color: #29282d;
-
     }
   }
-
-
-
-  &__text {}
 
   &__link {
     padding: 14px 27px;
@@ -715,6 +710,124 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+.blog {
+  padding: 50px 0 160px;
+  background-image: url('../images/decor/blog-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      top: -31px;
+      right: -24px;
+      width: 126px;
+      height: 53px;
+      background-image: url('../images/decor/blog-decor.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+
+  &__item-box {
+    padding: 30px 40px;
+  }
+
+  &__item {
+    max-width: 370px;
+    border: 1px solid #ececec;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: 20px 0 60px 0 rgba(202, 202, 202, 0.35);
+
+      .blog__item-link {
+        color: $accent;
+
+        &::after {
+          background-image: url('../images/icons/blog-arrow_accent.svg');
+        }
+      }
+    }
+  }
+
+  &__item-imglink {
+    display: block;
+
+    img {
+      height: 280px;
+      object-fit: cover;
+    }
+  }
+
+  &__item-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item-author,
+  &__item-date {
+    position: relative;
+    padding-left: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__item-author {
+    &::before {
+      background-image: url('../images/icons/blog-user.svg')
+    }
+  }
+
+  &__item-date {
+    &::before {
+      background-image: url('../images/icons/blog-time.svg')
+    }
+  }
+
+  &__item-title {
+    color: $title;
+    @extend %roboto-400;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  &__item-link {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: -14px;
+      width: 10px;
+      height: 8px;
+      background-image: url('../images/icons/blog-arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
   }
 }
 
