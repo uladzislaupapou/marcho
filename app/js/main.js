@@ -1,19 +1,48 @@
 $(function () {
 
- $('.top-slider__inner').slick({
-  dots: true,
-  arrows: false,
-  fade: true,
-  autoplay: true,
-  autoplaySpeed: 2000
- })
+$('.select-style').styler()
 
- $('.star').rateYo({
+
+$('.shop-content__filter-btn').on('click', function(){
+  $('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active')
+  $(this).addClass('shop-content__filter-btn--active')
+})
+
+$('.button-list').on('click', function() {
+  $('.product-item').addClass('product-item--list')
+})
+
+$('.button-grid').on('click', function () {
+	$('.product-item').removeClass('product-item--list')
+})
+
+	$('.top-slider__inner').slick({
+		dots: true,
+		arrows: false,
+		fade: true,
+		autoplay: true,
+		autoplaySpeed: 2000,
+	})
+
+	$('.star').rateYo({
 		starWidth: '17px',
 		ratedFill: '#ffc35b',
 		normalFill: '#ccccce',
 		readOnly: true,
- })
+	})
+
+	$('.filter-price__input').ionRangeSlider({
+		type: 'double',
+		prefix: '$',
+		onStart: function (data) {
+			$('.filter-price__from').text(data.from)
+			$('.filter-price__to').text(data.to)
+		},
+		onChange: function (data) {
+			$('.filter-price__from').text(data.from)
+			$('.filter-price__to').text(data.to)
+		},
+	})
 })
 
 function getTimeRemaining(endtime) {
@@ -56,5 +85,7 @@ function initializeClock(id, endtime) {
 	const timeinterval = setInterval(updateClock, 1000)
 }
 
-const deadline = document.querySelector('.promo__clock').getAttribute('data-time')
+const deadline = document
+	.querySelector('.promo__clock')
+	.getAttribute('data-time')
 initializeClock('promo__clock', deadline)
